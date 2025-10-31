@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Neovim configuration based on kickstart.nvim, refactored into a modular structure for better organization and maintainability. The configuration separates core settings, keymaps, and plugins into logical modules.
 
+**Requirements**: Neovim 0.11.4+ (uses native `vim.lsp.config` API)
+
 ## Architecture
 
 ### Modular Configuration Structure
@@ -192,9 +194,23 @@ Currently using kanso.nvim. Several commented-out alternatives available (gruvbo
 ### Adding New LSP Servers
 
 1. Edit `lua/plugins/lsp.lua`
-2. Add server to the `servers` table
-3. Optionally add to `ensure_installed`
+2. Add server to the `servers` table with optional configuration:
+   ```lua
+   servers = {
+     -- Simple setup
+     new_server = {},
+     -- With custom settings
+     another_server = {
+       settings = {
+         -- server-specific settings
+       },
+     },
+   }
+   ```
+3. Optionally add to `ensure_installed` for auto-installation
 4. Restart Neovim - mason-tool-installer will auto-install
+
+**Note**: This configuration uses Neovim 0.11+ native `vim.lsp.config` and `vim.lsp.enable` API (replaces deprecated `lspconfig.setup()`). The nvim-lspconfig plugin is still included for default server configurations.
 
 ### Adding Formatters
 
