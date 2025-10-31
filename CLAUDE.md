@@ -22,7 +22,6 @@ The configuration is organized into three main directories:
 │   │   └── autocommands.lua     # Autocommands (highlight on yank, etc.)
 │   ├── plugins/                  # Plugin specifications (auto-loaded by lazy.nvim)
 │   │   ├── autopairs.lua        # Auto-close brackets and quotes
-│   │   ├── claude-code.lua      # Claude Code integration
 │   │   ├── colorscheme.lua      # Color scheme (kanso.nvim + alternatives)
 │   │   ├── completion.lua       # blink.cmp & LuaSnip
 │   │   ├── flash.lua            # Rapid cursor movement
@@ -34,6 +33,7 @@ The configuration is organized into three main directories:
 │   │   ├── oil.lua              # File browser
 │   │   ├── snacks.lua           # Utility plugin
 │   │   ├── telescope.lua        # Fuzzy finder
+│   │   ├── tiny-inline-diagnostic.lua  # Inline diagnostic messages
 │   │   ├── treesitter.lua       # Syntax highlighting & parsing
 │   │   ├── vim-sleuth.lua       # Auto-detect indentation
 │   │   ├── vim-tmux-navigator.lua  # Tmux/Vim navigation
@@ -57,14 +57,14 @@ The configuration is organized into three main directories:
 
 Each plugin is in its own file for easy management:
 
-- **lsp.lua** - LSP configuration with Mason, servers: `pyright`, `zls`, `rust_analyzer`, `ts_ls`, `lua_ls`
+- **lsp.lua** - LSP configuration with Mason, servers: `clangd`, `pyright`, `zls`, `rust_analyzer`, `ts_ls`, `lua_ls`
 - **completion.lua** - blink.cmp autocompletion with LuaSnip snippets
 - **telescope.lua** - Fuzzy finder with vertical layout, fzf and ui-select extensions
 - **harpoon.lua** - Quick file bookmarking and navigation
 - **flash.lua** - Rapid cursor movement with `s`, `S`, `r`, `R` keys
 - **oil.lua** - File browser with `-` key binding
 - **vim-tmux-navigator.lua** - Seamless tmux/vim split navigation
-- **formatting.lua** - conform.nvim with format-on-save (stylua, prettier)
+- **formatting.lua** - conform.nvim with format-on-save (clang-format, stylua, prettier, zigfmt, rustfmt, ruff)
 - **gitsigns.lua** - Git signs in gutter with staging/diffing keymaps
 - **which-key.lua** - Keybinding hints popup
 - **lualine.lua** - Status line with base16 theme
@@ -73,6 +73,7 @@ Each plugin is in its own file for easy management:
 - **vim-sleuth.lua** - Auto-detect indentation
 - **snacks.lua** - Utility plugin collection
 - **colorscheme.lua** - Multiple color schemes (kanso active)
+- **tiny-inline-diagnostic.lua** - Inline diagnostic messages (replaces default virtual text)
 
 ## Common Commands
 
