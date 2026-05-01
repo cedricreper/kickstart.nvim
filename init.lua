@@ -16,6 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+
 --  Plugins are automatically loaded from lua/plugins/*.lua
 --  You can also configure plugins after the setup call as they will be available in your path.
 require('lazy').setup({

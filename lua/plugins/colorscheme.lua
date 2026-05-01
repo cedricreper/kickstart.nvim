@@ -1,13 +1,32 @@
 return {
   {
+    'ellisonleao/gruvbox.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('gruvbox').setup {
+        bold = false,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = true,
+          operators = false,
+          folds = false,
+        },
+        contrast = 'hard', -- can be "hard", "soft" or empty string
+      }
+      --     vim.cmd.colorscheme 'gruvbox'
+    end,
+  },
+  {
     'sainnhe/gruvbox-material',
     lazy = false,
     priority = 1000,
     config = function()
       vim.o.background = 'dark'
-      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_enable_italic = false
       vim.g.gruvbox_material_background = 'hard'
-      -- vim.cmd.colorscheme 'gruvbox-material'
+      --      vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
   {
@@ -15,18 +34,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd 'colorscheme iceberg'
-    end,
-  },
-  {
-    'webhooked/kanso.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('kanso').setup {
-        transparent = false,
-      }
-      -- vim.cmd 'colorscheme kanso'
+      --vim.cmd 'colorscheme iceberg'
     end,
   },
   {
@@ -39,20 +47,7 @@ return {
         flavour = 'mocha',
         transparent_background = false,
       }
-      -- vim.cmd 'colorscheme catppuccin'
-    end,
-  },
-  {
-    'rebelot/kanagawa.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('kanagawa').setup {
-        commentStyle = { italic = true },
-        theme = 'dragon',
-      }
-      -- vim.cmd 'colorscheme kanagawa-dragon'
+      vim.cmd 'colorscheme catppuccin'
     end,
   },
   {
@@ -62,15 +57,6 @@ return {
     priority = 1000,
     config = function()
       -- vim.cmd 'colorscheme zenbones'
-    end,
-  },
-  {
-    'vague2k/vague.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('vague').setup {}
-      -- vim.cmd 'colorscheme vague'
     end,
   },
 }
