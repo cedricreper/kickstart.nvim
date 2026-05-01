@@ -4,7 +4,9 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-      indent = {},
+      indent = {
+        scope = { enabled = true },
+      },
     },
   },
 }

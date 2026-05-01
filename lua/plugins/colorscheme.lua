@@ -15,7 +15,7 @@ return {
         },
         contrast = 'hard', -- can be "hard", "soft" or empty string
       }
-      vim.cmd.colorscheme 'gruvbox'
+      --     vim.cmd.colorscheme 'gruvbox'
     end,
   },
   {
@@ -47,7 +47,7 @@ return {
         flavour = 'mocha',
         transparent_background = false,
       }
-      --     vim.cmd 'colorscheme catppuccin'
+      vim.cmd 'colorscheme catppuccin'
     end,
   },
   {

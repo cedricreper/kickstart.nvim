@@ -2,6 +2,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.opt.laststatus = 0 -- Hide the status bar
+
 -- autoindent if possible when entering a new line in a block
 vim.opt.autowriteall = false
 vim.opt.smartindent = true

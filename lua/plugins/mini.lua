@@ -19,6 +19,12 @@ return {
       }
       -- Workflow
       require('mini.bracketed').setup()
+      local hipatterns = require 'mini.hipatterns'
+      hipatterns.setup {
+        highlighters = {
+          hex_color = hipatterns.gen_highlighter.hex_color(),
+        },
+      }
 
       -- Appearance
       require('mini.icons').setup()
